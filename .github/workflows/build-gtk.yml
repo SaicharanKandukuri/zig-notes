@@ -29,3 +29,18 @@ jobs:
           chmod +x zigmod
           echo "ZIGMOD=$(pwd)/zigmod" >> $GITHUB_ENV
       
+      - name: zigmod alive?
+        run: |
+          echo $ZIGMOD
+          $ZIGMOD version
+      
+      - name: Build Test
+        run: |
+          $ZIGMID fetch
+          $ZIG_PATH/zig build
+      
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: zig-get-build-test
+          path: zig-out/bin/zig-todo
