@@ -15,7 +15,7 @@ pub fn build(b: *std.build.Builder) !void {
     const optimize = b.standardOptimizeOption(.{});
 
     const exe = b.addExecutable(.{
-        .name = "capy-template",
+        .name = "zig-todo",
         .root_source_file = .{ .path = "src/main.zig" },
         .target = target,
         .optimize = optimize,
@@ -36,7 +36,7 @@ pub fn build(b: *std.build.Builder) !void {
     // WebAssembly doesn't have a concept of executables, so the way it works is that we make a shared library and capy exports a '_start' function automatically
     @setEvalBranchQuota(5000);
     const wasm = b.addSharedLibrary(.{
-        .name = "capy-template",
+        .name = "zig-todo",
         .root_source_file = .{ .path = "src/main.zig" },
         .target = comptime std.zig.CrossTarget.parse(.{ .arch_os_abi = "wasm32-freestanding" }) catch unreachable,
         .optimize = optimize,
