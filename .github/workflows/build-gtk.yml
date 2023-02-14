@@ -14,9 +14,8 @@ jobs:
         run: |
           wget https://ziglang.org/builds/zig-linux-x86_64-0.11.0-dev.1622+fc48467a9.tar.xz
           mkdir zig
-          tar -xvf zig-linux-x86_64-0.11.0-dev.1622+fc48467a9.tar.xz -C zig --strip-components=1
+          tar -xf zig-linux-x86_64-0.11.0-dev.1622+fc48467a9.tar.xz -C zig --strip-components=1
           echo "$(pwd)/zig"
-          ls -R zig
           echo "ZIG_PATH=$(pwd)/zig" >> $GITHUB_ENV
 
       - name: zig alive?
