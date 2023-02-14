@@ -21,4 +21,11 @@ jobs:
       - name: zig alive?
         run: |
           echo $ZIG_PATH
-          $ZIG_PATH/zig version 
+          $ZIG_PATH/zig version
+      
+      - name: Setup zigmod
+        run: |
+          wget -O zigmod https://github.com/nektro/zigmod/releases/download/r84/zigmod-x86_64-linux
+          chmod +x zigmod
+          echo "ZIGMOD=$(pwd)/zigmod" >> $GITHUB_ENV
+      
