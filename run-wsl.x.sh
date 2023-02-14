@@ -11,5 +11,6 @@ fi
 ## This a workaround for wayland with VcXsrv for wsL2 ( VcXsrv uses X server )
 DISPLAY=$(grep -m 1 nameserver /etc/resolv.conf | awk '{print $2}'):0
 export DISPLAY
+echo "$DISPLAY"
 
 zig build run

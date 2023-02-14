@@ -1,27 +1,37 @@
 const std = @import("std");
-const capy =  @import("capy");
+const capy = @import("capy");
+
 
 pub fn main() !void {
-    try capy.backend.init();
-    
+
     var window = try capy.Window.init();
+    try capy.backend.init();
 
-    try window.set(capy.Column(.{}, .{
-        capy.Label(.{ .text = "Top" }),
-        capy.Expanded(
-            capy.Row(.{}, .{
-                capy.Label(.{ .text = "Left" }),
-                capy.Expanded(
-                    capy.Label(.{ .text = "Center" }),
-                ),
-                capy.Label(.{ .text = "Right" }),
-            }),
-        ),
-        capy.Label(.{ .text = "Bottom " }),
-    }));
-    window.setTitle("Hello");
-    window.resize(250, 100);
+    // try window.set(capy.Tabs(
+    //     .{
+    //         capy.Tab(
+    //             .{ .label = "Tab 2" },
+    //             capy.Column(
+    //                 .{}, .{
+    //                     capy.Button(.{ .label = "Button 1" }),
+    //                     capy.Button(.{ .label = "Button 2" }),
+    //                     capy.Button(.{ .label = "Button 3" }),
+    //                 }
+    //             )
+    //         )
+    //     }
+    // ));
+
+    try window.set(
+        capy.Row(
+            .{},
+            .{
+                
+            }
+        )
+    );
+
+    window.resize(800, 600);
     window.show();
-
     capy.runEventLoop();
 }
