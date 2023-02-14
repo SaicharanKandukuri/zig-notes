@@ -4,8 +4,8 @@ const capy = @import("capy");
 
 pub fn main() !void {
 
-    var window = try capy.Window.init();
     try capy.backend.init();
+    var window = try capy.Window.init();
 
     // try window.set(capy.Tabs(
     //     .{
