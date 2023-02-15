@@ -1,17 +1,24 @@
-# capy-template
-Simple template for a Capy app
+# Zig Todo `--WIP--`
+
+A simple todo list written in Zig. 
+> This is a learning project for me to learn Zig.
+
+![image](assets/Screenshot%202023-02-15%20234835.jpg)
 
 ## Building
 
-On first build, don't forget to ensure [zigmod](https://github.com/nektro/zigmod/releases/latest)
-is downloaded and installed on your machine. Then, run:
-```sh
+- requires Zig <= `0.11.0-dev.1580+a5b34a61a`
+- requires ZigMod
+
+```bash
 zigmod fetch
+zig build
 ```
-And you're ready to go!
 
-Then if you wish to run the app simply execute
-`zig build run` (`zigmod fetch` is no longer required)
+## Running
 
-In the same way, to build and run the app for WebAssembly, execute
-`zig build serve`
+```bash
+zig build run
+```
+
+
