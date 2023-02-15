@@ -1,7 +1,8 @@
 #!/bin/bash
 
 #
-# Capy wont work in wayland yet 
+# Custom Script to run X apps in WSL with VcXsrv
+# Capy wont work in wayland yet ( kinda buggy )
 #
 
 if [ -z "$WSL_INTEROP" ]; then
