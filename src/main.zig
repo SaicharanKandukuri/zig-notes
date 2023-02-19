@@ -1,5 +1,6 @@
 const std = @import("std");
 const capy = @import("capy");
+const util = @import("./utils.zig");
 
 pub usingnamespace capy.cross_platform;
 var Aw: capy.Window = undefined;
@@ -48,6 +49,27 @@ fn stdLog(widget: *anyopaque) !void {
     //                             ^~~~~~~~~~~~~~~~~~~   ^~~~~~~~~
     //                              (TextField <type>)          (name)
 
-    std.debug.print("Button clicked: {s}\n", .{text.get("text")});
+    const time = std.time.timestamp();
+    std.debug.print("{any}: Button clicked: {s}\n", .{time,text.get("text")});
+
+    try util.Write(text.get("text"));
+}
+
+
+fn writeNote(widget: *anyopaque) !void {
+    const button = @ptrCast(
+        *capy.Button_Impl,
+        @alignCast(
+            @alignOf(capy.Button_Impl),
+            widget,
+        ),
+    );
+
+    const parent = button.getParent().?.getParent().?.as(capy.Container_Impl);
+    const text = parent.getChildAs(capy.TextField_Impl, "the feild").?;
+    const time = std.time.timestamp();
+    std.debug.print("{any}: Button clicked: {s}\n", .{time,text.get("text")});
     // finally get text from text field
+
+
 }

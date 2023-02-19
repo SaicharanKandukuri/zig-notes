@@ -3,3 +3,5 @@ zig-out/
 
 .zigmod
 deps.zig
+.zigmod
+deps.zig

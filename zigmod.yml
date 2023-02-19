@@ -1,8 +1,9 @@
-id: eje8wf3r4lz8em2jnign4ocxywosgkrk1dr6lgcbb0y1ne6y
-name: zig-todo
-license: Unlicense
-description: Simple template for Capy apps
+id: b50m56okzkaej0gft81v9841gz01t9c3s081ojhrgpjlvg8a
+name: zig-notes
+license: MIT
+description: zig notes sample
+root_dependencies:
 build_dependencies:
     - src: git https://github.com/capy-ui/capy
-    - src: git https://github.com/Luukdegram/apple_pie # this is only necessary if you want 'zig build serve'
-root_depedencies:
+    - src: git https://github.com/Luukdegram/apple_pie
+dependencies:
